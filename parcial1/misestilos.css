@@ -21,3 +21,24 @@ span ul li{
     font-style: oblique;
     font-weight: 700px;
 }
+
+#boton{
+    background-color: aqua;
+    border: none;
+    font-size: 30px;
+    width: 500px;
+    padding: 20px;
+    color: black;
+}
+
+.text{
+    color: black;
+}
+
+.link{
+    color: gray;
+}
+
+a:hover{
+    color: brown;
+}
