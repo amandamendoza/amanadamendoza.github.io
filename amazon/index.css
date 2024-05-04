@@ -5,3 +5,10 @@ h2{
 span{
     background-color: black;
 }
+.Link{ 
+
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    color: rgb(255, 255, 255);
+}
