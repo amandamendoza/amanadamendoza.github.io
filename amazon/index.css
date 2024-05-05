@@ -12,3 +12,11 @@ span{
 a:hover{
     color: rgb(255, 255, 255);
 }
+
+div.fondoazul{
+    background-color:#179bc6;
+     border: 1px;
+      margin:auto;
+    padding:250px;
+}
+
