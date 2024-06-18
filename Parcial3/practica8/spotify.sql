@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2024 a las 02:53:28
--- Versión del servidor: 10.1.39-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 18-06-2024 a las 18:54:18
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -32,7 +31,7 @@ CREATE TABLE `artista` (
   `id` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL,
   `descripcion` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `artista`
@@ -52,17 +51,10 @@ INSERT INTO `artista` (`id`, `nombre`, `descripcion`) VALUES
 (11, 'Selena Quintanilla', 'fue una cantante mexicano-estadounidense de música tejana, ranchera, balada, pop y cumbia.'),
 (12, 'los angeles azules', 'Los Ángeles Azules es un grupo musical mexicano del género de cumbia, originaria de la Ciudad de México.​ '),
 (13, 'Marshmello', 'Marshmello, es un DJ y productor discográfico estadounidense de future bass, electrónica y electrohouse.'),
-(14, 'Alan Walker', 'Alan Olav Walker es un DJ, remezclador y productor discográfico noruego.');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `artista canciones`
---
-
-CREATE TABLE `artista canciones` (
-  `cancion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+(14, 'Alan Walker', 'Alan Olav Walker es un DJ, remezclador y productor discográfico noruego.'),
+(15, 'Reik', 'Reik es una banda musical originaria de Mexicali, Baja California, México y formada en 2003. '),
+(16, 'Elvis Presley', 'Elvis, fue un cantante y actor estadounidense. Apodado como «el rey del rock and roll»'),
+(17, 'fall out boy', 'Fall Out Boy es una banda estadounidense');
 
 -- --------------------------------------------------------
 
@@ -74,7 +66,7 @@ CREATE TABLE `artista_canciones` (
   `id` int(11) NOT NULL,
   `artista_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -90,7 +82,35 @@ CREATE TABLE `canciones` (
   `fecha` date NOT NULL,
   `activo` tinyint(1) NOT NULL,
   `foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `canciones`
+--
+
+INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `activo`, `foto`) VALUES
+(1, '0X1=LOVESONG (I Know I Love You) feat. Seori', 1, '03:35:00', '2021-05-31', 1, ''),
+(2, 'Run Away', 1, '05:16:00', '2019-10-21', 0, ''),
+(3, 'Devil by the Window', 1, '03:26:00', '2023-02-21', 0, ''),
+(4, 'Deja Vu', 1, '04:00:00', '2024-04-01', 0, ''),
+(7, 'Crown', 1, '03:46:00', '2019-03-04', 0, ''),
+(8, 'Cat & Dog', 1, '03:41:00', '2019-04-24', 0, ''),
+(9, 'Can\'t You See Me?', 1, '03:50:00', '2020-05-18', 0, ''),
+(10, 'Blue Hour\r\n', 1, '03:42:00', '2020-10-26', 0, ''),
+(11, 'La Gran Señora', 9, '03:22:00', '2009-08-28', 0, ''),
+(12, 'Inolvidable', 9, '03:29:00', '2011-08-27', 0, ''),
+(13, 'Por Que No Le Calas', 9, '02:59:00', '2003-01-01', 0, ''),
+(14, 'Mariposa de Barrio', 9, '03:25:00', '2017-06-02', 0, ''),
+(15, 'Resulta', 9, '03:26:00', '2009-10-20', 0, ''),
+(16, 'Dama Divina', 9, '03:14:00', '2012-07-03', 0, ''),
+(17, 'Detrás de Mi Ventana', 9, '03:40:00', '2009-10-20', 0, ''),
+(18, 'Besos y Copas', 9, '03:39:00', '2009-10-20', 0, ''),
+(19, 'Culpable o Inocente', 9, '03:01:00', '2009-07-14', 0, ''),
+(20, 'Por Un Amor', 9, '02:50:00', '2006-03-21', 0, ''),
+(21, 'Sugar, We\'re Goin Down', 10, '03:49:00', '2005-04-20', 0, ''),
+(22, 'Thnks fr th Mmrs', 10, '03:23:00', '2007-04-09', 0, ''),
+(23, 'Centuries', 10, '03:48:00', '2014-09-09', 0, ''),
+(24, 'Dance, Dance', 10, '03:00:00', '2005-09-15', 0, '');
 
 -- --------------------------------------------------------
 
@@ -102,7 +122,7 @@ CREATE TABLE `favoritas` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -113,7 +133,7 @@ CREATE TABLE `favoritas` (
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `generos`
@@ -127,10 +147,9 @@ INSERT INTO `generos` (`id`, `nombre`) VALUES
 (5, 'cumbia'),
 (6, 'electronica'),
 (7, 'baladas romanticas'),
-(8, 'metal'),
-(9, 'clasica\r\n'),
-(10, ' rock and roll'),
-(11, 'ragional mexicana\r\n');
+(8, ' rock and roll'),
+(9, 'ragional mexicana\r\n'),
+(10, 'Alternativa/independiente');
 
 -- --------------------------------------------------------
 
@@ -142,7 +161,7 @@ CREATE TABLE `membresia` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `precio` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `membresia`
@@ -169,7 +188,7 @@ CREATE TABLE `paylist` (
   `total_canciones` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `publica` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -182,7 +201,7 @@ CREATE TABLE `playlist_canciones` (
   `playlist_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -195,7 +214,7 @@ CREATE TABLE `usuario` (
   `nombre` varchar(150) NOT NULL,
   `correo` varchar(150) NOT NULL,
   `membrecia_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -289,7 +308,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `artista`
 --
 ALTER TABLE `artista`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `artista_canciones`
@@ -301,7 +320,7 @@ ALTER TABLE `artista_canciones`
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritas`
@@ -313,7 +332,7 @@ ALTER TABLE `favoritas`
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `membresia`
