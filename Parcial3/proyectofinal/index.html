@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto final parcial #3 </title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.7.1.js"></script>
+    <style>
+      body{
+        background-color: rgb(192, 140, 241);
+      }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div style="width: 300px;">
+                    <h4 style="background-color: cornflowerblue;"> Consulta 01: obtener el listado de alumnos</h4>
+                </div>
+                <div style="width: 300px;">
+                    <h3 style="background-color: cadetblue;">SELECT * FROM alumno;</h3>
+                </div>
+                <img src="Consulta 01.png" alt="" width="1000px">
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div style="width: 300px;">
+                    <h4 style="background-color: cornflowerblue;"> Consulta 02: obtener el listado de cursos y las asignaturas</h4>
+                </div>
+                <div style="width:  400px;">
+                    <h3 style="background-color: cadetblue;">
+                        SELECT curso.nombreDescriptivo,asignatura.nombre<br>
+                        FROM curso <br> 
+                        INNER JOIN asignatura <br> 
+                        ON curso.idCurso = asignatura.curso <br>
+                    </h3>
+                </div>
+                <img src="Consulta 02.png" alt="" width="1000px">
+            </div>
+        </div>
+    </div>
+    
     Amanda Mendoza Moreno
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
