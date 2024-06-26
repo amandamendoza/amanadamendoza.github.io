@@ -111,10 +111,13 @@
                 </div>
                 <div style="width:  425px;">
                     <h3 style="background-color: cadetblue;">
-                        hola
+                        SELECT profesor.*, asignatura.* FROM profesor 
+                        INNER JOIN asignatura 
+                        ON profesor.idProfesor = asignatura.coordinador 
+                        ORDER BY profesor.nombre, asignatura.nombre
                     </h3>
                 </div>
-                <img src="Consulta 03.png" alt="" width="1000px">
+                <img src="Consulta 06.png" alt="" width="1000px">
             </div>
         </div>
     </div><br><br>
@@ -127,10 +130,15 @@
                 </div>
                 <div style="width:  425px;">
                     <h3 style="background-color: cadetblue;">
-                        hola
+                        SELECT asignatura.nombre AS nombre_asignatura, 
+                        COUNT(matricula.idAlumno) AS total_alumnos_inscritos 
+                        FROM asignatura INNER JOIN matricula 
+                        ON asignatura.idAsignatura = matricula.idAsignatura 
+                        GROUP BY asignatura.idAsignatura 
+                        ORDER BY total_alumnos_inscritos DESC
                     </h3>
                 </div>
-                <img src="Consulta 03.png" alt="" width="1000px">
+                <img src="Consulta 07.png" alt="" width="1000px">
             </div>
         </div>
     </div><br><br>
