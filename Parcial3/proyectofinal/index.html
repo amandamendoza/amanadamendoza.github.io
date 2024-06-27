@@ -3,194 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto final parcial #3 </title>
+    <title>Proyecto final parcial #3</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery-3.7.1.js"></script>
-    <style>
+     <style>
       body{
-        background-color: rgb(192, 140, 241);
+        background-color: rgb(207, 179, 233);
       }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 01: obtener el listado de alumnos</h4>
-                </div>
-                <div style="width: 300px;">
-                    <h3 style="background-color: cadetblue;">SELECT * FROM alumno;</h3>
-                </div>
-                <img src="Consulta 01.png" alt="" width="1000px">
+            <div class="col"> 
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;"> Consulta 01: obtener el listado de alumnos</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 01.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">SELECT * FROM alumno;</p>
+                    </div>
+                  </div>
             </div>
         </div>
     </div><br><br>
 
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 02: obtener el listado de cursos y las asignaturas</h4>
-                </div>
-                <div style="width:  600px;">
-                    <h3 style="background-color: cadetblue;">
-                        SELECT curso.nombreDescriptivo,asignatura.nombre<br>
-                        FROM curso <br> 
-                        INNER JOIN asignatura <br> 
-                        ON curso.idCurso = asignatura.curso <br>
-                    </h3>
-                </div>
-                <img src="Consulta 02.png" alt="" width="1000px">
-            </div>
-        </div>
-    </div><br><br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 03: obtener listado (NOMBRE Y APELLIDO) de alumnos que tengan beca</h4>
-                </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        SELECT alumno.nombre, alumno.apellido1, alumno.apellido2 FROM alumno WHERE beca like 'si';
-                    </h3>
-                </div>
-                <img src="Consulta 03.png" alt="" width="1000px">
-            </div>
-        </div>
-    </div><br><br>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 04: obtener listado de profesores (NOMBRE Y APELLIDO), y su nombre contacto</h4>
-                </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        SELECT profesor.nombre, profesor.apellido1,<br>
-                        tlfcontactoprof.telefono FROM profesor INNER JOIN tlfcontactoprof<br>
-                        ON profesor.idProfesor = tlfcontactoprof.idProfesor
-                    </h3>
-                </div>
-                <img src="Consulta 04.png" alt="" width="1000px">
-            </div>
-        </div>
-    </div><br><br>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 05: obtener listado de alumno (todos los campos) que estan inscritos a la asignatura de programacion</h4>
-                </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        SELECT alumno.*, asignatura.nombre 
-                        FROM alumno 
-                        INNER JOIN matricula ON matricula.idAlumno = alumno.idAlumno
-                        INNER JOIN asignatura on asignatura.idAsignatura = matricula.idAsignatura 
-                        WHERE asignatura.idAsignatura LIKE 'ASOO9'SELECT alumno.*, asignatura.nombre 
-                        FROM alumno INNER JOIN matricula ON matricula.idAlumno = alumno.idAlumno 
-                        INNER JOIN asignatura on asignatura.idAsignatura = matricula.idAsignatura 
-                        WHERE asignatura.idAsignatura LIKE 'ASOO9'
-                    </h3>
-                </div>
-                <img src="Consulta 05.png" alt="" width="1000px">
-            </div>
-        </div>
-    </div><br><br>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 06: obtener listado de profesor y asignatura que implica</h4>
-                </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        SELECT profesor.*, asignatura.* FROM profesor 
+            <div class="col"> 
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 02: obtener el listado de cursos y las asignaturas</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 02.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">
+                        SELECT curso.nombreDescriptivo,asignatura.nombre
+                        FROM curso 
                         INNER JOIN asignatura 
-                        ON profesor.idProfesor = asignatura.coordinador 
-                        ORDER BY profesor.nombre, asignatura.nombre
-                    </h3>
-                </div>
-                <img src="Consulta 06.png" alt="" width="1000px">
+                        ON curso.idCurso = asignatura.curso</p>
+                    </div>
+                  </div>
             </div>
         </div>
     </div><br><br>
-    
+
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 07: obtener listado (NOMBRE Y APELLIDO) de alumnos que tengan beca</h4>
-                </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        SELECT asignatura.nombre AS nombre_asignatura, 
-                        COUNT(matricula.idAlumno) AS total_alumnos_inscritos 
-                        FROM asignatura INNER JOIN matricula 
-                        ON asignatura.idAsignatura = matricula.idAsignatura 
-                        GROUP BY asignatura.idAsignatura 
-                        ORDER BY total_alumnos_inscritos DESC
-                    </h3>
-                </div>
-                <img src="Consulta 07.png" alt="" width="1000px">
+            <div class="col"> 
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 03: obtener listado (NOMBRE Y APELLIDO) de alumnos que tengan beca</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 03.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
             </div>
         </div>
     </div><br><br>
-    
+
     <div class="container">
         <div class="row">
             <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 08: obtener listado (NOMBRE Y APELLIDO) de alumnos que tengan beca</h4>
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 04: obtener listado de profesores (NOMBRE Y APELLIDO), y su nombre contacto</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 04.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">SELECT profesor.nombre, profesor.apellido1, tlfcontactoprof.telefono FROM profesor INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor
+                    </div>
                 </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        hola
-                    </h3>
-                </div>
-                <img src="Consulta 03.png" alt="" width="1000px">
             </div>
         </div>
     </div><br><br>
-    
+
     <div class="container">
         <div class="row">
             <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 09: obtener listado (NOMBRE Y APELLIDO) de alumnos que tengan beca</h4>
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 05: obtener listado de alumno (todos los campos) que estan inscritos a la asignatura de programacion</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 05.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text"> SELECT * FROM alumno INNER JOIN asignatura WHERE asignatura.idAsignatura LIKE 'AS009'</p>
+                    </div>
                 </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        hola
-                    </h3>
-                </div>
-                <img src="Consulta 03.png" alt="" width="1000px">
             </div>
         </div>
     </div><br><br>
-    
+
     <div class="container">
         <div class="row">
             <div class="col">
-                <div style="width: 300px;">
-                    <h4 style="background-color: cornflowerblue;"> Consulta 10: obtener listado (NOMBRE Y APELLIDO) de alumnos que tengan beca</h4>
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 06: obtener listado de profesor y asignatura que implica</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 06.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">SELECT profesor.nombre, asignatura.nombre FROM profesor INNER JOIN impartir ON profesor.idProfesor = impartir.idProfesor INNER JOIN asignatura ON impartir.idAsignatura=asignatura.idAsignatura</p>
+                    </div>
                 </div>
-                <div style="width:  425px;">
-                    <h3 style="background-color: cadetblue;">
-                        hola
-                    </h3>
-                </div>
-                <img src="Consulta 03.png" alt="" width="1000px">
             </div>
         </div>
-    </div>
-    
+    </div><br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 07: Mostrar la asignatura que tiene más alumnos en total</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 07.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">SELECT asignatura.nombre, COUNT(matricula.idAlumno) AS total_inscritos FROM asignatura JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura GROUP BY asignatura.nombre ORDER BY total_inscritos DESC;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 08: Ovbtener listados de alumnos que les da clases el profesor con id PR04(jose manuel), sin importar en que asignatura este inscrito</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 08.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">SELECT alumno.* FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura = asignatura.idAsignatura WHERE asignatura.coordinador = 'PR016';</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;">Consulta 09: obtener listado de cursos, con asignatura, y el maestro que las imparten</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 09.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">SELECT curso.idCurso, curso.nombreDescriptivo AS nombre_curso, asignatura.idAsignatura, asignatura.nombre AS nombre_asignatura,profesor.idProfesor, profesor.nombre AS nombre_profesor, profesor.apellido1 AS apellido1_profesor, profesor.apellido2 AS apellido2_profesor FROM curso JOIN asignatura ON curso.idCurso = asignatura.curso JOIN impartir ON asignatura.idAsignatura = impartir.idAsignatura JOIN profesor ON impartir.idProfesor = profesor.idProfesor ORDER BY curso.idCurso, asignatura.idAsignatura, profesor.idProfesor;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div style="width: 1000px;"><h4 style="background-color: cornflowerblue;"> Consulta 10: obtener listado (NOMBRE Y APELLIDO) de alumnos que tengan beca</h4></div>
+                <div class="card" style="width: 1200px;">
+                    <img src="Consulta 10.png" class="card-img-top" alt="" width="1000px">
+                    <div class="card-body">
+                      <p class="card-text">SELECT alumno.nombre, asignatura.nombre, profesor.nombre, curso.nombreDescriptivoFROM alumno INNER JOIN matricula ON alumno.idAlumno=matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura=asignatura.idAsignatura INNER JOIN impartir ON impartir.idAsignatura=asignatura.idasignatura INNER JOIN profesor ON impartir.idProfesor=profesor.idProfesor INNER JOIN curso ON curso.idCurso=asignatura.curso;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
 
     Amanda Mendoza Moreno
     <script src="js/bootstrap.js"></script>
