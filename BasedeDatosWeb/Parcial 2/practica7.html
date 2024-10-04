@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica #7 JAVASCRIPT</title>
+    <title>Práctica 7. JavaScript</title>
     <script src="practica7.js"></script>
 </head>
+<style>
+    input{
+        font-size: 60px;
+        max-width: 40px;
+        background-color: lightskyblue;
+    }
+</style>
 <body>
-    <h1>Practica #7 JAVASCRIPT</h1>
-    
+    <h1>Práctica #7 JavaScript</h1>
+
     <input type="text" onkeyup="validar(1)" id="cuadro1">
     <input type="text" onkeyup="validar(2)" id="cuadro2">
     <input type="text" onkeyup="validar(3)" id="cuadro3"><br>
-    
+
     <input type="text" onkeyup="validar(4)" id="cuadro4">
     <input type="text" onkeyup="validar(5)" id="cuadro5">
     <input type="text" onkeyup="validar(6)" id="cuadro6"><br>
-    
+
     <input type="text" onkeyup="validar(7)" id="cuadro7">
     <input type="text" onkeyup="validar(8)" id="cuadro8">
-    <input type="text" onkeyup="validar(9)" id="cuadro9"> <br>
+    <input type="text" onkeyup="validar(9)" id="cuadro9"><br>
 
+    <h1 id="ganador"></h1>
+    <button onclick="reiniciar()">REINICIAR JUEGO</button>
+   
 
 </body>
 </html>
