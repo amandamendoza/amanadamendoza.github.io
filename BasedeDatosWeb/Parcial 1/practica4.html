@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen en línea</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <form action="practica4.php" method="POST">
+            <div class="row">
+                <h1>Exámen de Marvel</h1><hr>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        1. ¿Cuál es el nombre real de Iron Man?
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta1" value="Tony Stark" required> Tony Stark </p>
+                            <p><input type="radio" name="pregunta1" value="Steve Rogers" required> Steve Rogers </p>
+                            <p><input type="radio" name="pregunta1" value="Peter Parker" required> Peter Parker </p>
+                        </div>
+                    </div>
+
+                    <div class="card p-4 mb-4">
+                        <p>
+                            2. <input type="text" name="pregunta2" required> es el nombre del matillo de thor
+
+                        </p>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        3. ¿Cuál es el superpoder de Hulk? (Selecciona 2)
+                        </div>
+                        <div class="card-body">
+                            <p><input type="checkbox" name="pregunta3[]" value="Fuerza_sobrehumana" >Fuerza sobrehumana </p>
+                            <p><input type="checkbox" name="pregunta3[]" value="Volar" > Volar </p>
+                            <p><input type="checkbox" name="pregunta3[]" value="Resistencia_sobrehumana" > Resistencia sobrehumana </p>
+                        </div>
+                    </div>
+
+                    <div class="card p-4 mb-4">
+                        <p>
+                            4. <input type="text" name="pregunta4" required> Es el lider de los vengadores
+                        </p>
+                    </div>
+
+                    <div class="card mb-4"></div>
+                        <div class="card-header">
+                        5. ¿Cuál es el verdadero nombre de Black Widow?
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta5" value="Natasha Romanoff" required> Natasha Romanoff </p>
+                            <p><input type="radio" name="pregunta5" value="Carol Danvers" required> Carol Danvers</p>
+                            <p><input type="radio" name="pregunta5" value="Wanda Maximoff" required> Wanda Maximoff</p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4"></div>
+                        <div class="card-header">
+                        6. ¿Cómo se llama la tecnología que usa Tony Stark para crear su traje?
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta6" value="Vibranium" required> Vibranium </p>
+                            <p><input type="radio" name="pregunta6" value="Tecnología_Arc_Reactor" required> Tecnología Arc Reactor </p>
+                            <p><input type="radio" name="pregunta6" value="Piedra del Infinito" required> Piedra del Infinito </p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        7. ¿En qué película aparece por primera vez Black Panther?
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta7" value="Capitán_América_Civil_War" required> Capitán América Civil War </p>
+                            <p><input type="radio" name="pregunta7" value="Iron_Man" required> Iron Man </p>
+                            <p><input type="radio" name="pregunta7" value="El Rey León" required> El Rey León </p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        8. ¿Son armas del universo de marvel? (Selecciona 2)
+                        </div>
+                        <div class="card-body">
+                            <p><input type="checkbox" name="pregunta8[]" value="Escudo" > Escudo</p>
+                            <p><input type="checkbox" name="pregunta8[]" value="Mjolnir" > Mjolnir</p>
+                            <p><input type="checkbox" name="pregunta8[]" value="Batmóvil" > Batmóvil</p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4"></div>
+                        <div class="card-header">
+                        9. ¿Cómo se llama el planeta natal de Thanos?   
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta9" value="Titan" required> Titan </p>
+                            <p><input type="radio" name="pregunta9" value="Ego" required> Ego </p>
+                            <p><input type="radio" name="pregunta9" value="Marte" required> play </p>
+                        </div>
+                    </div>
+
+                    <div class="card p-4 mb-4"></div>
+                        <p>
+                            10. <input type="text" name="pregunta10" required> Es el padre biológico de Peter Quill (Star-Lord)
+                        </p>
+                    </div>
+
+            </div>
+            <br><input type="submit" class="btn btn-primary" value="Terminar examen">
+        </form>
+    </div>
+</body>
+</html>

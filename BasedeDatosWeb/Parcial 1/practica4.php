@@ -39,7 +39,7 @@
     echo "<h5>Respuestas seleccionadas: ".implode(", ", $pregunta3)." ---- Correctas = Fuerza sobrehumana, Resistencia sobrehumana</h5>";
     if(is_array($pregunta3) && count($pregunta3) == 2){
         foreach($pregunta3 as $respuesta){
-            if($respuesta == "Fuerza_sobrehumana" || $respuesta == "resistencia_sobrehumana"){
+            if($respuesta == "Fuerza_sobrehumana" || $respuesta == "Resistencia_sobrehumana"){
                 $p3_respuestas_correctas++;
             }
         }
